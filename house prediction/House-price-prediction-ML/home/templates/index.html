@@ -1,0 +1,241 @@
+{% extends 'navbar.html'%}
+{% load static %}
+{%block content%}
+<style>
+   .img1{
+       height: 500px;
+   }
+  
+   .imgbox{
+       width: 60%;
+       height: 56%;
+   }
+   .floatr{
+       float: right;
+   }
+ 
+    .navbar-nav {
+        margin-left: 75%;
+    }
+
+   .box{
+       box-sizing: border-box;
+       border: 2px solid black;
+       position:relative;
+       width: 25%;
+       height: 35vh;
+       margin:45px;
+       text-align: center;
+       padding: 2px;
+       border-collapse: separate;
+       border-radius: 120px;
+       background-color: #fff;
+       box-shadow: 10px 10px 10px 5px orange;
+       
+       
+   }
+   
+  a{
+    text-decoration: none;
+    color: white;
+  }
+   #boxes{
+       display: flex;
+      border: 2px solid black;
+      border-radius: 15px;
+      width: 95%;
+       
+   }
+   .ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+  .card {
+    perspective: 130rem;
+    position: relative;
+    height: 10rem;
+    max-width: 400px;
+    margin: 2rem;
+    box-shadow: none;
+    background: none;
+    width: 300px;
+    padding: 10px;
+  }
+  .cards{
+    margin: 5%;
+    margin-left: 8%;
+  }
+  
+  .card-side {
+    height: 10rem;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:2rem;
+    color: white;
+    
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+    background-color: #4158D0;
+    text-align: center;
+    background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 46%, #FFCC70 100%);
+  }
+  
+  .card-side.front {
+    text-align: center;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(0deg);
+  }
+</style>
+
+<body>
+ 
+    
+    <h4 class="ml6" style="text-align: center;">
+      <span class="text-wrapper">
+        <span class="letters m-5" style="margin-left: 50%;" >Welcome to House price Pridiction</span>
+      </span>
+    </h4><br>
+ 
+    <div class="container-fluid" id="cursol">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 img1" src="{% static 'img/nullxnull.png'%}" alt="zero slide">
+              </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 img1" src="{% static 'img/mini.png'%}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 img1" src="{% static 'img/download.png'%}" alt="Second slide">
+          </div>
+          
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div><br>
+    <div class="cards" style="display: flex;">
+    <div class="card">
+      <div class="card-side front">
+        <div>MISSION</div>
+      </div>
+      <div class="card-side back">
+        <div>Back Side</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-side front">
+        <div>VISSION</div>
+      </div>
+      <div class="card-side back">
+        <div>Back Side</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-side front">
+        <div>NEXT</div>
+      </div>
+      <div class="card-side back">
+        <div>Back Side</div>
+      </div>
+    </div>
+  </div>
+    
+    <h4 class="ml6" style="text-align: center;">
+        <span class="text-wrapper">
+          <span class="letters m-5" style="margin-left: 50%;" >OUR SERVICES</span>
+        </span>
+      </h4><br>
+    <div class="container-fluid" id="boxes">
+        
+        <div class="box">
+            Sign Up<br>
+            <img src="{% static 'img/icon-register.png'%}" class="imgbox mt-2" alt="Register"><br>
+            <button type="button" class="btn btn-info mt-3"><a href="accounts/signup">Click Here</a></button>
+        </div>
+        <div class="box">
+            Login<br>
+            <img src="{% static 'img/login.png'%}" class="imgbox mt-3" alt="Register"><br>
+            <button type="button"  class="btn btn-success mt-2"><a id="login" href="accounts/login">Click Here</a></button>
+        </div>
+        <div class="box">
+            Guest <br>
+            <img src="{% static 'img/guest.png'%}" class="imgbox mt-3" alt="Register"><br>
+            <button type="button" class="btn btn-warning mt-2"><a href="gproduct">Click Here</a></button>
+        </div>
+    </div><br>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          Team  C2 © 2022 Copyright :
+          <a class="text-dark" href=""> House Price Prediction</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+    var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 600,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+{%endblock%}

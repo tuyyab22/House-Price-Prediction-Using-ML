@@ -1,0 +1,59 @@
+{% extends 'navbar.html'%}
+{% block content %}
+<style>
+    .header2{
+        text-align: center;
+        font-size: 25px;
+    }
+    .header {
+        background-color: bisque;
+        position: relative;
+        height: 8vh;
+        line-height: 8vh;
+      }
+      #name,
+  #password {
+    display: inline-block;
+    ;
+  }
+  #password {
+    float: right;
+    margin-right: 126px;
+  }
+
+  #name {
+    margin-left: 60px;
+  }
+  #livesearch{
+    margin-left: 84%;
+    position: absolute;
+    margin-top: -3.5%;
+  }
+  #livesearch>a{
+    color: aliceblue;
+    text-decoration: none;
+  }
+</style>
+<div class="ms-5">
+    <h1>details page</h1>
+    <button id="livesearch" class="btn btn-success"><a href="login" method="post">Live Search</a></button>
+</div>
+<div class="header mt-3">
+    <div id="name">Name: {{name}}</div>
+    <div id="password">Password: {{password}}</div>
+</div>
+<hr>
+<div class="header2">Liked Sites</div>
+<hr>
+{% for like in likes%}
+<div class="card ms-5" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  {%endfor%}
+
+{% endblock %}

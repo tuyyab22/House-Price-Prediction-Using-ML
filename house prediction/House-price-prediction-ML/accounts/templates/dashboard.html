@@ -1,0 +1,102 @@
+{% extends 'navbar.html'%}
+{% load static %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    @media (min-width: 768px){
+    .col-sm-3 {
+        width: 15%;
+    }
+    }
+    #dashbord{
+      text-align: center;
+      margin-top: 30px;
+    }
+    .resizeb{
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs ms-5">
+      <h4 id="dashbord">DASHBOARD</h4>
+      <ul class="nav nav-pills nav-stacked mt-5">
+        <form action="productsearch" method="post">
+          {% csrf_token %}
+        <li class="active"><button type="submit" class="btn btn-secondary mt-3 resizeb" >SEARCH</li>
+      </form>
+        <form action="likedpages" method="POST">
+          {% csrf_token %}
+        <li><button type="submit" class="btn btn-secondary mt-3 resizeb" >Fav</button></li>
+      </form>
+    </form>
+    <form action="cpass" method="get">
+      {% csrf_token %}
+    <li><button type="submit" class="btn btn-secondary mt-3 resizeb" >Change Password</button></li>
+  </form>
+  <form action="logoutuser" >
+    {% csrf_token %}
+  <li><button type="submit" class="btn btn-secondary mt-3 resizeb" >Logout</button></li><br>
+</form>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+     
+      
+      <!-- <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <p>Text</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p> 
+          </div>
+        </div>
+      </div> -->
+      {% if messages %}
+      {%for message in messages%}
+      <iframe src="{{message}}" frameborder="2" style="width: 110%; height:75vh ">
+
+      </iframe>
+      {%endfor%}
+      {%endif%}
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+{%endblock%}

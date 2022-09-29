@@ -1,0 +1,31 @@
+{% extends 'navbar.html'%}
+{% load static %}
+{%block content%}
+<style>
+  
+</style>
+<h2 style="text-align: center;">Liked Sites</h2>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        {% for value in data %}
+            <div class="col-auto">
+                <div class="card border-primary mb-3 p-5 m-2">
+                    <h4>Area Name : {{value.areaname}}</h4>
+                  <li class="list-group-item p-2">Size :{{value.size}} </li>
+                  <li class="list-group-item p-2">No. of BathRoom :{{value.bathroom}}</li>
+                  <li class="list-group-item p-2">Parking Facility :{{value.parking}}</li>
+                  <li class="list-group-item p-2">Duplex : {{value.duplex}}</li>
+                  <li class="list-group-item p-2">Total Cost :{{value.totalcost}}</li>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+ 
+  
+  
+
+{%endblock%}

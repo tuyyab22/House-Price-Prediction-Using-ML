@@ -1,0 +1,107 @@
+{% extends 'navbar.html'%}
+{%block content%}
+<style>
+    .form-switch {
+        display: inline-block;
+      }
+    .head{
+        text-align: center;
+    }
+   
+</style>
+<div class="head">
+    <h1>Add Your details</h1>
+    <hr>
+</div>
+<div class="container">
+    <form action="adddata" method="post">
+       
+        <div class="input-group mb-3 ">
+          <label class="input-group-text" for="location">Area</label>
+          <select class="form-select" id="location" name="location">
+            {% for loc in location %}
+  
+            <option value="{{loc}}">{{loc}}</option>
+  
+            {%endfor%}
+          </select>
+        </div><br>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" name="size" placeholder="Enter the Size :"
+            aria-label="Recipient's username" aria-describedby="basic-addon2" min="500">
+          <span class="input-group-text" id="basic-addon2">sqft</span>
+        </div><br>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bhk" value="1">
+          <label class="form-check-label" for="flexSwitchCheckChecked">1BHK</label>
+        </div>
+        <div class="form-check form-switch ms-5">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bhk" value="2">
+          <label class="form-check-label" for="flexSwitchCheckChecked">2BHK</label>
+        </div>
+        <div class="form-check form-switch ms-5">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bhk" value="3">
+          <label class="form-check-label" for="flexSwitchCheckChecked">3BHK</label>
+        </div>
+        <div class="form-check form-switch ms-5">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bhk" value="4">
+          <label class="form-check-label" for="flexSwitchCheckChecked"> 4BHK</label>
+        </div><br><br>
+        <h2>Select the bathroom :</h2><br>
+        <div class="form-check form-switch ">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bt" value="1">
+          <label class="form-check-label" for="flexSwitchCheckChecked">1 BATHROOM</label>
+        </div>
+        <div class="form-check form-switch ms-5">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bt" value="2">
+          <label class="form-check-label" for="flexSwitchCheckChecked">2 BATHROOM</label>
+        </div>
+        <div class="form-check form-switch ms-5">
+          <input class="form-check-input" type="checkbox" role="switch" id="bhk" name="bt" value="3">
+          <label class="form-check-label" for="flexSwitchCheckChecked">3 BATHROOM</label>
+        </div>
+        <br><br>
+        <h2>Amount</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter amount" aria-label="Recipient's username" aria-describedby="basic-addon2" name="amount">
+        <div class="input-group-append">
+          <span class="input-group-text" id="amount">RS</span>
+        </div>
+      </div><br>
+        <h2>DUPLEX HOUSE </h2>
+      <div >
+        
+        <label class="radio-inline">
+          <input type="radio" name="duplex" value="1" checked>&nbsp;&nbsp;&nbsp;Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="duplex" value="0" style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;No
+        </label>
+      </div><br>
+      <h2>PARKING FACILITY</h2>
+      <div>
+        <label class="radio-inline">
+          <input type="radio" name="parking" value="1" checked>&nbsp;&nbsp;&nbsp;Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="parking" value="0" style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;No
+        </label>
+      </div>
+      <br>
+      <h2>BALCANY AVAILABILITY</h2>
+      <div>
+        <label class="radio-inline">
+          <input type="radio" name="balcany" value="1" checked>&nbsp;&nbsp;&nbsp;Nedded
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="balcany" value="0" style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;Not nedded
+        </label>
+      </div><br>
+      
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success"
+          >Add Data</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <!-- <button type="submit" class="btn btn-info" onClick="window.location.reload();">Search again!!</button> -->
+      </form>
+</div>
+{%endblock%}
